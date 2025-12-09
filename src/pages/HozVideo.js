@@ -42,6 +42,16 @@ const HozVideo = () => {
         <video loop autoPlay muted ref={videoRef}>
           <source src={videoData} type="video/mp4"/>
         </video>
+        <ul className="video-txt">          
+          <li>
+            <span>Con</span> + <span>nect</span> → <span>Wave</span>
+          </li>
+          <li>
+            <span>함께</span>
+            <span>연결하고</span>
+            <span>큰 파도를 만들어 내는 것</span>
+          </li>
+        </ul>
       </div>
       <h2>큰 파도를 만들어 냅니다.</h2>
     </section>

@@ -24,7 +24,7 @@ const MainVideo = () => {
         pin:true,
         markers: false
       }
-    });
+    });    
   },{scope:containerRef});
 
   return (
