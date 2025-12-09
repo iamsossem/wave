@@ -6,11 +6,12 @@ import { useRef } from "react";
 gsap.registerPlugin(useGSAP,ScrollTrigger);
 const ClipText = () => {
   const containerRef = useRef(null);
-  const mask = useRef(null);
   useGSAP(()=>{
     const tl = gsap.timeline();
-    tl.to(mask,{
-      clipPath: 'inset(0% 0% 0% 0%)'
+    tl.fromTo(".mask-layer",{
+      "clip-path": 'inset(100% 100% 100% 100%)'
+    },{
+      "clip-path": 'inset(0% 0% 0% 0%)'
     });
     ScrollTrigger.create({
       animation: tl,
@@ -24,7 +25,7 @@ const ClipText = () => {
   },{scope:containerRef});
   return (
     <section id="clip-text" ref={containerRef}>
-      <div className="mask-layer" ref={mask}>
+      <div className="mask-layer">
         <div className="text-content">
           <p>그 동안 고객과 셀러의 연결성을 강화하기 위해</p>
           <p>독립적이고 자율적인 연합군처럼 움직여 왔지만</p>

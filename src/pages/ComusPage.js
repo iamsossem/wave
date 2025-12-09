@@ -1,5 +1,6 @@
 import ScrollPage from "../components/ScrollPage"
 import page from "../data/scrollPage.js";
+import "../styles/ComusPage.css";
 const ComusPage = () => {
   console.log( page );
   return (
@@ -11,7 +12,10 @@ const ComusPage = () => {
               return (
                 <ScrollPage 
                   key={item.id} 
+                  id={item.id}
                   title={item.title}
+                  desc={item.desc}
+                  imgName={item.imgName}
                 />
               )
             })
