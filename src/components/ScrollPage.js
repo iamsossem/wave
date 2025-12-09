@@ -1,6 +1,6 @@
-const ScrollPage = () => {
+const ScrollPage = ({title}) => {
   return (
-    <div>ScrollPage</div>
+    <div>{title}</div>
   )
 }
 
