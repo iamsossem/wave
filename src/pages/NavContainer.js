@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import navData from "../data/navData.js";
 import { useState } from "react";
-const NavContainer = () => {
+const NavContainer = ({active}) => {
   //활성화 된 서브메뉴
   const [activeMenu,setActiveMenu] = useState(null);  
 
@@ -15,7 +15,7 @@ const NavContainer = () => {
     }
   }
   return (
-    <nav>      
+    <nav className={active ? `active`:''}>      
       <ul>
         {
           navData.map((item)=>{

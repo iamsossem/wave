@@ -24,11 +24,11 @@ const Marquee = () => {
       repeat:-1
     });
     gsap.to(containerRef.current,{
-      y:'20vh',
+      y:'50vh',
       ease: 'none',
       scrollTrigger:{
         trigger: containerRef.current,
-        start: 'top 70%',
+        start: 'top 50%',
         end: '+=500',
         scrub: 1,
         markers: false       
