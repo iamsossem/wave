@@ -1,0 +1,24 @@
+#mqrquee{
+  position: relative;
+  /* top: 70%;  */
+  /* width: 100%; */
+  left: 0;           /* 왼쪽 끝에 고정 */
+  overflow-x: hidden;  /* 넘치는 ul 부분 잘라내기 (스크롤바 제거) */
+  z-index: 10;
+  ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4rem;
+    width: max-content; /* 자식 요소 너비만큼 길게 늘어남 */
+    padding-right: 4rem; /* gap 크기만큼 오른쪽 여백 추가 (자연스러운 루프 핵심) */
+    li{
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 4rem;
+      background-color: #fff;
+      padding: 2rem;
+      box-shadow: 2px 2px 20px #ccc;
+    }
+  }
+}

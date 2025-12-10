@@ -9,12 +9,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bolder;  
     clip-path: inset(100% 100% 100% 100%);      
     .text-content{
       text-align: center;
-      line-height: 1.5;
+      line-height: 1.8;
+      .text-wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+          width: 0;
+          transform: scale(0);
+        }
+      }
     }
   }
 }
