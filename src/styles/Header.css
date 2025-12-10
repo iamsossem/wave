@@ -16,17 +16,7 @@ header{
   font-size: 1.4rem;
   font-weight: 700;
 }
-/* 메인메뉴에 마우스를 올렸을 때 
-   sub-menu 가 있으면 서브메뉴 보이기 
-*/
-nav:has(.main-menu:hover .sub-menu) .sub-menu{
-  height: 300px;
-  opacity: 1;
-}
-nav:has(.main-menu:hover .sub-menu):before{
-  height: 300px;
-  border-top: 2px solid #ddd;
-}
+
 
 nav{
   &::before{
@@ -101,21 +91,26 @@ nav{
 .hamburger{
   display: none;
 }
-
+/* 데스크탑 처리 */
+@media all and (min-width: 769px) {
+  /* 메인메뉴에 마우스를 올렸을 때 
+    sub-menu 가 있으면 서브메뉴 보이기 
+  */
+  nav:has(.main-menu:hover .sub-menu) .sub-menu{
+    height: 300px;
+    opacity: 1;
+  }
+  nav:has(.main-menu:hover .sub-menu):before{
+    height: 300px;
+    border-top: 2px solid #ddd;
+  }  
+}
 /* 모바일 처리 */
 @media all and (max-width: 768px) {
   .hamburger{
     display: block;
   }
   /* nav 영역이 모바일 경우 */
-  nav:has(.main-menu:hover .sub-menu) .sub-menu{
-    opacity: 0;
-    height: 0;
-  }
-  nav:has(.main-menu:hover .sub-menu):before{
-  height: auto;
-  border-top: none;
-}
   nav {
     position: fixed;
     top: 100px;

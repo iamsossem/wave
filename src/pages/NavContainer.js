@@ -6,7 +6,8 @@ const NavContainer = () => {
   const [activeMenu,setActiveMenu] = useState(null);  
 
   //모바일 상태, PC상태를 확인  
-  const handleMenuClick = (id,hasMenu)=>{
+  const handleMenuClick = (e,id,hasMenu)=>{
+    e.preventDefault();
     const isMobile = window.innerWidth <= 768;
     if( isMobile && hasMenu ){
       //모바일 화면에서만 처리
@@ -20,7 +21,7 @@ const NavContainer = () => {
           navData.map((item)=>{
             //현재 아이템 활성화 상태인지 확인
             const isActive = activeMenu === item.id;
-            return (            
+            return (
             <li 
               key={item.id} 
               className={`main-menu ${isActive ? "active":""}`}
