@@ -108,10 +108,51 @@ nav{
     display: block;
   }
   /* nav 영역이 모바일 경우 */
-  nav > ul{
-    flex-direction: column;
-    .sub-menu{
-      position: static;
+  nav:has(.main-menu:hover .sub-menu) .sub-menu{
+    opacity: 0;
+    height: 0;
+  }
+  nav:has(.main-menu:hover .sub-menu):before{
+  height: auto;
+  border-top: none;
+}
+  nav {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    &::before{
+      display: none;
+    }
+    > ul{
+      flex-direction: column;
+      .main-menu{
+        flex: 0 0 auto; /* 너비고정 해제 */
+        width: 100%;
+        padding: 0;
+        text-align: left;
+        border-bottom: none;
+        /* &:hover > .sub-menu{
+          background-color: #fff;
+        } */
+        &:has(.sub-menu):hover{
+          border-bottom: none;
+        }
+        &.active{ 
+          .sub-menu{
+            opacity: 1;
+            height: auto;
+          }
+        }
+        .sub-menu{
+          opacity: 0;          
+          position: static;
+          height: 0;
+          li{            
+          }
+        }
+      }
     }
   }
 }

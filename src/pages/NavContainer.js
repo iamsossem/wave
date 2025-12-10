@@ -1,13 +1,34 @@
 import { Link } from "react-router-dom";
 import navData from "../data/navData.js";
-const NavContainer = () => {  
+import { useState } from "react";
+const NavContainer = () => {
+  //활성화 된 서브메뉴
+  const [activeMenu,setActiveMenu] = useState(null);  
+
+  //모바일 상태, PC상태를 확인  
+  const handleMenuClick = (id,hasMenu)=>{
+    const isMobile = window.innerWidth <= 768;
+    if( isMobile && hasMenu ){
+      //모바일 화면에서만 처리
+      setActiveMenu(id);
+    }
+  }
   return (
     <nav>      
       <ul>
         {
-          navData.map((item)=>{return (
-            <li key={item.id} className="main-menu">
-              <Link to={item.link}>{item.title}</Link>
+          navData.map((item)=>{
+            //현재 아이템 활성화 상태인지 확인
+            const isActive = activeMenu === item.id;
+            return (            
+            <li 
+              key={item.id} 
+              className={`main-menu ${isActive ? "active":""}`}
+            >
+              <Link 
+                to={item.link}
+                onClick={(e)=>{handleMenuClick(e,item.id,item.subMenu.length>0)}}
+              >{item.title}</Link>
               {
                 (item.subMenu.length > 0) && (
                   <ul className="sub-menu">
