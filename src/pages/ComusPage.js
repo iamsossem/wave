@@ -24,6 +24,8 @@ const ComusPage = () => {
         end: `+=${move*(-1)}`,
         scrub: 1,
         pin: true,
+        // 다음 컨텐츠가 핀이 끝날때까지 아래에 있도록: 공간확보
+        pinSpacing: true,
         markers: false
       }
     });

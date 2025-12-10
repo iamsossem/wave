@@ -1,0 +1,32 @@
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding: 2rem 10rem;
+  color: #aaa;
+  .left{}
+  .right{
+    position: relative;
+    ul{
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px 40px;
+      li{
+        margin: 8px 0;
+        cursor: pointer;
+        &:hover{
+          color: #aaa;
+        }
+      }
+    }
+    p{
+      border: 1px solid #ddd;
+      padding: 10px 40px;
+      cursor: pointer;
+    }
+  }
+}

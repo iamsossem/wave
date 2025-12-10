@@ -43,6 +43,7 @@ nav{
   }
   > ul{
     display: flex;    
+    flex-direction: row;
     .main-menu{
       padding: 2rem 1rem;
       flex: 0 0 130px;
@@ -92,6 +93,25 @@ nav{
     background-color: none;
     option{
       background-color: #fff;
+    }
+  }
+}
+
+/* 햄버거 메뉴처리 */
+.hamburger{
+  display: none;
+}
+
+/* 모바일 처리 */
+@media all and (max-width: 768px) {
+  .hamburger{
+    display: block;
+  }
+  /* nav 영역이 모바일 경우 */
+  nav > ul{
+    flex-direction: column;
+    .sub-menu{
+      position: static;
     }
   }
 }
